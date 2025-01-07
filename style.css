@@ -17,15 +17,16 @@ a {
 body {
     width: 100%;
     height: 100%;
+    min-height: 100vh;
     overflow-y: auto;
-    background-color: #2b0a0a; /* Darker red background */
-    color: white; /* Default text color */
+    background-color: #2b0a0a; 
+    color: white; 
 }
 nav {
     width: 100%;
     height: 10vh;
     position: sticky;
-    background-color: #8c070791; /* Darker red for the navbar */
+    background-color: #8c070791; 
     margin-bottom: 80px;
 }
 .nav-container {
@@ -73,8 +74,8 @@ nav {
 }
 
 .alahuzas span {
-    font-size: 30px; /* Betű méret*/
-    font-weight: bold; /* Betű vastagság */
+    font-size: 30px; 
+    font-weight: bold; /* Félkövér betűtípus */
 }
 
 .alahuzas:hover{
@@ -91,13 +92,6 @@ nav {
     color: white;
     display: block;
     font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
-}
-
-@media (min-width:885px) { 
-    .hamburg {
-        display: none;
-    }
-    
 }
 
 .nav-container .links {
@@ -119,14 +113,14 @@ nav {
     left: 0;
     width: 0%;
     height: 3px;
-    background-color: #c92c2c; /* Lighter red */
+    background-color: #c92c2c; 
     transition: 0.2s linear;
 }
 .nav-container .links a:hover::before {
     width: 100%;
 }
 .nav-container .links a:hover {
-    color: #c92c2c; /* Lighter red */
+    color: #c92c2c; 
 }
 .dropdown {
     z-index: 100;
@@ -149,16 +143,16 @@ nav {
     transition: 0.2s linear;
 }
 .dropdown .links a:hover {
-    background-color: #c92c2c; /* Lighter red */
+    background-color: #c92c2c; 
 }
 
 section {
     width: 100%;
-    height: auto; /* Adjusted to auto for scrolling */
+    height: auto;
 }
 .main-container {
     width: 100%;
-    height: 100%; /* Adjusted height */
+    height: 100%; 
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -265,7 +259,6 @@ section {
     margin: 10vh auto;
     background-color: rgba(255, 255, 255, 0.1); /* Light transparent background for visibility */
     border-radius: 5px;
-    
 }
 .additional-content h2 {
     color: #c92c2c; /* Lighter red */
@@ -279,7 +272,6 @@ section {
     margin: 10vh auto ;
     background-color: rgba(255, 255, 255, 0.1); /* Light transparent background for visibility */
     border-radius: 10px;
-    
 }
 
 .cisco img {
@@ -292,7 +284,6 @@ section {
     --border: 10px;   /* Szegely vastagsaga*/
     --offset: 20px;   /* Offset iranyitas*/
     --gap: 5px;       /* A gap hover-en */
-    
     --_c: var(--color) var(--border), #0000 0 calc(100% - var(--border)),var(--color) 0;
     --_o: calc(3*var(--offset));
     padding: 
@@ -308,7 +299,6 @@ section {
     filter:grayscale(.5);
     transition: .5s;
     cursor: pointer;
-
 }
 
 .cisco img:hover{
@@ -322,8 +312,6 @@ section {
     /* text-shadow: 0 0 10px #c92c2c; */
     font-size:  2.5vh;
     width: 30%;
-    
-    
 }
 
 .gallery{
@@ -344,7 +332,6 @@ figure {
     margin: 0;
     padding: 5px;
     width: 18%;
-
 }
 
 .gallery img{
@@ -358,7 +345,6 @@ figure {
     margin: 0.5%;
     display: flex;
     align-content: space-evenly;
-
 }
 
 figcaption {
@@ -368,7 +354,6 @@ figcaption {
     text-align: center;
     margin-bottom: 20vh;
     padding-bottom: 20vh;
-
 }
 
 .gallery img:hover{
@@ -383,11 +368,41 @@ footer {
     width: 100%;
     text-align: center;
     padding: 100px;
-
 }
 
+/* -- RESPONSIVITY -- */
+
+@media (min-width:885px) { 
+    
+    .hamburg {
+        display: none;
+    }
+    
+}
+
+@media (max-width: 440px) {
+
+    .gallery {
+        display: flex; 
+        flex-wrap: wrap; /* A képek új sorba törhetnek ha nem férnek el */
+        justify-content: space-evenly; /* Középre igazítás vízszintesen */
+        gap: 5px; 
+    }
+
+    .gallery img {
+        width: 100% ; 
+        height: 200%; 
+        object-fit: fill; /* Kép kitöltése torzítás nélkül */
+        border-radius: 5px; /* Lekerekített sarkok */
+    }
+
+    figcaption {
+        font-size: 1vh;
+    }
+}
 
 @media (max-width: 884px) {
+
     nav .logo {
         position: absolute;
         top: 16px;
@@ -420,39 +435,7 @@ footer {
     }
 }
 
-@media (max-width: 440px) {
-    .gallery {
-        display: flex; /* Flexbox használata */
-        flex-wrap: wrap; /* A képek új sorba törhetnek, ha nem férnek el */
-        justify-content: space-evenly; /* Középre igazítás vízszintesen */
-        gap: 5px; /* Kisebb távolság a képek között */
-    }
-
-    .gallery img {
-        width: 100% ; /* Képek 50%-os szélességgel, a gap levonásával */
-        height: 200%; /* Magasság automatikus */
-        object-fit: fill; /* Kép kitöltése torzítás nélkül */
-        border-radius: 5px; /* Lekerekített sarkok */
-    }
-
-    figcaption {
-        font-size: 1vh;
-    }
-}
-
-@media (max-width:829px){
-
-    .cisco_szoveg {
-        font-size: 1.5rem;
-    }
-    
-
-}
-
 @media (min-width: 1026px) and (max-width:1169px) {
-    .cisco{
-        justify-content: space-evenly; /* Egyenletes távolság a képek között */
-    }
 
     .cisco img {
         height: 30%;
@@ -462,20 +445,50 @@ footer {
 
 
 @media (min-width:885px) and (max-width:1025px){
-    .cisco {
-        align-items: center;
-    }
+
     .cisco img {
-        width: 25vh;
+        height: 30%;
+        width: 30%;
     }
-
-
 }
 
-footer{
-    position: relative;
-    bottom: 0;
-    
+@media (min-width:585px) and (max-width:824px){
+
+    .cisco img {
+        height: 30%;
+        width: 30%;
+    }
+}
+
+@media (min-width:400px) and (max-width:470px){
+
+    .cisco img {
+        height: 30%;
+        width: 30%;
+    }
+}
+
+@media (min-width:300px) and (max-width:469px){
+
+    .cisco img {
+        height: 50%;
+        width: 50%;
+    }
+}
+
+
+
+
+.content{
+    min-height: calc(100vh - 100px) /* you have to minus header and footer width 
+    together*/
+  }
+
+.footer {
+    margin-top: 0; /* take available whitespace */
+    margin-bottom: -10px;      /* remove bottom whitespace */
+    padding-bottom: 5px;
+    height: 100px;            /* calc height when limited content */
 }
 
 
@@ -513,7 +526,8 @@ footer{
     transform: translateY(50px);
   }
 
-/* Hover effekt */
+/* Scroll gomb hover effekt */
 #scrollUpBtn:hover {
-    background-color: #a62b2b; /* Darker shade of red on hover */
+    background-color: #a62b2b; 
 }
+
